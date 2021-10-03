@@ -13,6 +13,7 @@
 		8E8DBC17270A1B720072AF9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8DBC15270A1B720072AF9D /* Main.storyboard */; };
 		8E8DBC19270A1B730072AF9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E8DBC18270A1B730072AF9D /* Assets.xcassets */; };
 		8E8DBC1C270A1B730072AF9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E8DBC1A270A1B730072AF9D /* LaunchScreen.storyboard */; };
+		8E8DBC24270A2E780072AF9D /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8DBC23270A2E780072AF9D /* CircularProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8E8DBC18270A1B730072AF9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E8DBC1B270A1B730072AF9D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E8DBC1D270A1B730072AF9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E8DBC23270A2E780072AF9D /* CircularProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				8E8DBC18270A1B730072AF9D /* Assets.xcassets */,
 				8E8DBC1A270A1B730072AF9D /* LaunchScreen.storyboard */,
 				8E8DBC1D270A1B730072AF9D /* Info.plist */,
+				8E8DBC23270A2E780072AF9D /* CircularProgressBarView.swift */,
 			);
 			path = HomeWork11;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				8E8DBC14270A1B720072AF9D /* ViewController.swift in Sources */,
 				8E8DBC10270A1B720072AF9D /* AppDelegate.swift in Sources */,
+				8E8DBC24270A2E780072AF9D /* CircularProgressBarView.swift in Sources */,
 				8E8DBC12270A1B720072AF9D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

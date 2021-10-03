@@ -20,9 +20,14 @@ class ViewController: UIViewController {
     let workTime = 1500
     let restTime = 300
 
+    var circularProgressBarView: CircularProgressBarView!
+    var circularViewDuration: TimeInterval = 10
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartStopButtonImage()
+        setUpCircularProgressBarView()
+        circularProgressBarView.createCircularPathCircleLayer()
     }
 
     func setStartStopButtonImage() {
@@ -39,13 +44,17 @@ class ViewController: UIViewController {
         if !isStarted {
             if !isWorkTime {
                 time = workTime
+                circularViewDuration = Double(workTime)
                 startTimer()
+                setUpCircularProgressBarView()
+                circularProgressBarView.createCircularPath(lineColor: UIColor.systemRed.cgColor) //
                 isWorkTime = true
             }
             self.startStopButton.setImage(symbolStop, for: .normal)
             isStarted = true
         } else {
             timer.invalidate()
+            circularProgressBarView.createCircularPathCircleLayer()
             timeLabel.text = "25:00"
             timeLabel.textColor = .systemRed
             self.startStopButton.setImage(symbolPlay, for: .normal)
@@ -53,6 +62,7 @@ class ViewController: UIViewController {
             isWorkTime = false
             isStarted = false
         }
+
     }
 
     func startTimer() {
@@ -66,12 +76,18 @@ class ViewController: UIViewController {
                 time = restTime
                 timeLabel.text = "05:00"
                 timeLabel.textColor = .systemGreen
+                circularViewDuration = Double(restTime)
+                setUpCircularProgressBarView()
+                circularProgressBarView.createCircularPath(lineColor: UIColor.systemGreen.cgColor)
                 self.startStopButton.tintColor = .systemGreen
             } else {
                 isWorkTime = true
                 time = workTime
                 timeLabel.text = "25:00"
                 timeLabel.textColor = .systemRed
+                circularViewDuration = Double(workTime)
+                setUpCircularProgressBarView()
+                circularProgressBarView.createCircularPath(lineColor: UIColor.systemRed.cgColor)
                 self.startStopButton.tintColor = .systemRed
             }
         } else {
@@ -84,6 +100,17 @@ class ViewController: UIViewController {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
         return String(format:"%02i:%02i", minutes, seconds)
+    }
+
+    func setUpCircularProgressBarView() { //
+        // set view
+        circularProgressBarView = CircularProgressBarView(frame: .zero)
+        // align to the center of the screen
+        circularProgressBarView.center = view.center
+        // call the animation with circularViewDuration
+        circularProgressBarView.progressAnimation(duration: circularViewDuration)
+        // add this view to the view controller
+        view.addSubview(circularProgressBarView)
     }
 
 }
